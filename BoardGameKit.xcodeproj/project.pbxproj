@@ -10,6 +10,13 @@
 		E751630F209A06C200C527CB /* BoardGameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7516305209A06C200C527CB /* BoardGameKit.framework */; };
 		E7516314209A06C200C527CB /* BoardGameKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7516313209A06C200C527CB /* BoardGameKitTests.swift */; };
 		E7516316209A06C200C527CB /* BoardGameKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E7516308209A06C200C527CB /* BoardGameKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E7516322209A086300C527CB /* BasePieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7516320209A086300C527CB /* BasePieceView.swift */; };
+		E7516323209A086300C527CB /* BaseBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7516321209A086300C527CB /* BaseBoardView.swift */; };
+		E7516329209A087800C527CB /* BoardDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7516325209A087800C527CB /* BoardDimensions.swift */; };
+		E751632A209A087800C527CB /* BasePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7516326209A087800C527CB /* BasePiece.swift */; };
+		E751632B209A087800C527CB /* BaseBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7516327209A087800C527CB /* BaseBoard.swift */; };
+		E751632C209A087800C527CB /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7516328209A087800C527CB /* Position.swift */; };
+		E751632E209A0D9600C527CB /* BoardRowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751632D209A0D9600C527CB /* BoardRowExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +36,13 @@
 		E751630E209A06C200C527CB /* BoardGameKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoardGameKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7516313209A06C200C527CB /* BoardGameKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGameKitTests.swift; sourceTree = "<group>"; };
 		E7516315209A06C200C527CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7516320209A086300C527CB /* BasePieceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePieceView.swift; sourceTree = "<group>"; };
+		E7516321209A086300C527CB /* BaseBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBoardView.swift; sourceTree = "<group>"; };
+		E7516325209A087800C527CB /* BoardDimensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDimensions.swift; sourceTree = "<group>"; };
+		E7516326209A087800C527CB /* BasePiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePiece.swift; sourceTree = "<group>"; };
+		E7516327209A087800C527CB /* BaseBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBoard.swift; sourceTree = "<group>"; };
+		E7516328209A087800C527CB /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		E751632D209A0D9600C527CB /* BoardRowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRowExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +85,8 @@
 		E7516307209A06C200C527CB /* BoardGameKit */ = {
 			isa = PBXGroup;
 			children = (
+				E7516324209A086800C527CB /* Model */,
+				E751631F209A082700C527CB /* View */,
 				E7516308209A06C200C527CB /* BoardGameKit.h */,
 				E7516309209A06C200C527CB /* Info.plist */,
 			);
@@ -84,6 +100,27 @@
 				E7516315209A06C200C527CB /* Info.plist */,
 			);
 			path = BoardGameKitTests;
+			sourceTree = "<group>";
+		};
+		E751631F209A082700C527CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7516321209A086300C527CB /* BaseBoardView.swift */,
+				E7516320209A086300C527CB /* BasePieceView.swift */,
+				E751632D209A0D9600C527CB /* BoardRowExtension.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7516324209A086800C527CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E7516327209A087800C527CB /* BaseBoard.swift */,
+				E7516326209A087800C527CB /* BasePiece.swift */,
+				E7516325209A087800C527CB /* BoardDimensions.swift */,
+				E7516328209A087800C527CB /* Position.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +185,7 @@
 				TargetAttributes = {
 					E7516304209A06C200C527CB = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					E751630D209A06C200C527CB = {
 						CreatedOnToolsVersion = 9.3;
@@ -194,6 +232,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E751632E209A0D9600C527CB /* BoardRowExtension.swift in Sources */,
+				E7516329209A087800C527CB /* BoardDimensions.swift in Sources */,
+				E751632B209A087800C527CB /* BaseBoard.swift in Sources */,
+				E751632C209A087800C527CB /* Position.swift in Sources */,
+				E7516323209A086300C527CB /* BaseBoardView.swift in Sources */,
+				E7516322209A086300C527CB /* BasePieceView.swift in Sources */,
+				E751632A209A087800C527CB /* BasePiece.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +384,7 @@
 		E751631A209A06C200C527CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -356,6 +402,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arbel03.BoardGameKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +411,7 @@
 		E751631B209A06C200C527CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,6 +437,7 @@
 		E751631D209A06C200C527CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZV2EKKA598;
 				INFOPLIST_FILE = BoardGameKitTests/Info.plist;
@@ -407,6 +456,7 @@
 		E751631E209A06C200C527CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZV2EKKA598;
 				INFOPLIST_FILE = BoardGameKitTests/Info.plist;
