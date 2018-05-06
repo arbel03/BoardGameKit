@@ -8,18 +8,18 @@
 
 import UIKit
 
-class BaseBoardView<T, V: BasePieceView>: UIStackView where V.Piece == T, V: UIView {
+open class BaseBoardView<T, V: BasePieceView>: UIStackView where V.Piece == T, V: UIView {
 	private var dimensions: BoardDimensions!
 	
     public override init(frame: CGRect) {
 		super.init(frame: frame)
 		
 		axis = .vertical
-		alignment = .fill
-		distribution = .equalSpacing
+//        alignment = .fill
+//        distribution = .fillEqually
 	}
 	
-	required init(coder: NSCoder) {
+    required public init(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
@@ -37,28 +37,29 @@ class BaseBoardView<T, V: BasePieceView>: UIStackView where V.Piece == T, V: UIV
 				let pieceView = V(frame: CGRect.zero)
 				// Set tag of tile
 				pieceView.tag = row * self.dimensions.getColumnCount() + col
-				// Set the aspect ratio of the PieceView - 1:1
-				pieceView.widthAnchor.constraint(equalTo: pieceView.heightAnchor, multiplier: 1).isActive = true
 				newRow.addArrangedSubview(pieceView)
 			}
 			self.addNewRow(newBoardRow: newRow)
 		}
+        
+        updateBoardView(board: board)
 	}
 	
 	public func updateBoardView(board: BaseBoard<T>) {
         // This function updates the board view given a GameBoard
-		for row in 0..<self.dimensions.getRowCount() {
-			for col in 0..<self.dimensions.getColumnCount() {
+		for row in 0 ..< self.dimensions.getRowCount() {
+			for col in 0 ..< self.dimensions.getColumnCount() {
 				let pos = Position(row: row, col: col)
-				getPieceView(forPosition: pos).updateView(piece: board.getPiece(forPosition: pos)!)
+                let piece = board.getPiece(forPosition: pos)
+				getPieceView(forPosition: pos).updateView(piece: piece!)
 			}
 		}
 	}
 	
 	public func resetBoardView() {
         // This function removes all BoardViews from the board
-		for row in 0..<self.dimensions.getRowCount() {
-			for col in 0..<self.dimensions.getColumnCount() {
+		for row in 0 ..< self.dimensions.getRowCount() {
+			for col in 0 ..< self.dimensions.getColumnCount() {
 				let pos = Position(row: row, col: col)
 				getPieceView(forPosition: pos).clearView()
 			}

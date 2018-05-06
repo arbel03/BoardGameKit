@@ -36,7 +36,7 @@ open class BaseBoard<T: BasePiece> {
     }
 	
     public func getPiece(forPosition position: Position) -> T? {
-		if position.getColumn() >= 0 && position.getColumn() < dimensions.getColumnCount() && position.getRow() >= 0 && position.getRow() < dimensions.getColumnCount() {
+		if position.getColumn() >= 0 && position.getColumn() < dimensions.getColumnCount() && position.getRow() >= 0 && position.getRow() < dimensions.getRowCount() {
 			return board[position.getRow()][position.getColumn()]
 		}
 		return nil
@@ -48,6 +48,5 @@ open class BaseBoard<T: BasePiece> {
     
     public func getBoardDimensions() -> BoardDimensions {
         return self.dimensions
-        
     }
 }

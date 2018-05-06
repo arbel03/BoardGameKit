@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol BasePieceView {
+public protocol BasePieceView {
 	associatedtype Piece: BasePiece
 	
 	func updateView(piece: Piece)

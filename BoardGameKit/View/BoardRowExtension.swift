@@ -12,8 +12,8 @@ extension UIStackView {
     class func GetBoardRow() -> UIStackView {
         let boardRow = UIStackView()
         boardRow.axis = .horizontal
-        boardRow.alignment = .fill
-        boardRow.distribution = .fill
+        boardRow.alignment = .center
+        boardRow.distribution = .fillEqually
         return boardRow
     }
 }

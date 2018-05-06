@@ -10,6 +10,6 @@ import Foundation
 
 open class BasePiece {
 	required public init() {
-		
-	}
+        
+    }
 }
