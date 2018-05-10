@@ -17,6 +17,8 @@
 		E751632B209A087800C527CB /* BaseBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7516327209A087800C527CB /* BaseBoard.swift */; };
 		E751632C209A087800C527CB /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7516328209A087800C527CB /* Position.swift */; };
 		E751632E209A0D9600C527CB /* BoardRowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E751632D209A0D9600C527CB /* BoardRowExtension.swift */; };
+		E7C8CF8F20A47EC80039F910 /* BoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CF8E20A47EC80039F910 /* BoardDelegate.swift */; };
+		E7C8CFA120A4C3A60039F910 /* LevelSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C8CFA020A4C3A60039F910 /* LevelSetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		E7516327209A087800C527CB /* BaseBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBoard.swift; sourceTree = "<group>"; };
 		E7516328209A087800C527CB /* Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		E751632D209A0D9600C527CB /* BoardRowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRowExtension.swift; sourceTree = "<group>"; };
+		E7C8CF8E20A47EC80039F910 /* BoardDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDelegate.swift; sourceTree = "<group>"; };
+		E7C8CFA020A4C3A60039F910 /* LevelSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSetting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 		E7516307209A06C200C527CB /* BoardGameKit */ = {
 			isa = PBXGroup;
 			children = (
+				E7C8CFA020A4C3A60039F910 /* LevelSetting.swift */,
 				E7516324209A086800C527CB /* Model */,
 				E751631F209A082700C527CB /* View */,
 				E7516308209A06C200C527CB /* BoardGameKit.h */,
@@ -108,6 +113,7 @@
 				E7516321209A086300C527CB /* BaseBoardView.swift */,
 				E7516320209A086300C527CB /* BasePieceView.swift */,
 				E751632D209A0D9600C527CB /* BoardRowExtension.swift */,
+				E7C8CF8E20A47EC80039F910 /* BoardDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,11 +239,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E751632E209A0D9600C527CB /* BoardRowExtension.swift in Sources */,
+				E7C8CF8F20A47EC80039F910 /* BoardDelegate.swift in Sources */,
 				E7516329209A087800C527CB /* BoardDimensions.swift in Sources */,
 				E751632B209A087800C527CB /* BaseBoard.swift in Sources */,
 				E751632C209A087800C527CB /* Position.swift in Sources */,
 				E7516323209A086300C527CB /* BaseBoardView.swift in Sources */,
 				E7516322209A086300C527CB /* BasePieceView.swift in Sources */,
+				E7C8CFA120A4C3A60039F910 /* LevelSetting.swift in Sources */,
 				E751632A209A087800C527CB /* BasePiece.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

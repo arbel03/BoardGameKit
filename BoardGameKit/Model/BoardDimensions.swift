@@ -9,9 +9,14 @@
 import Foundation
 
 //Diamensions and info about the current board struct
-public struct BoardDimensions {
+public struct BoardDimensions: Decodable {
     private var cols: Int
     private var rows: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case rows = "Rows"
+        case cols = "Columns"
+    }
     
     public init(columns: Int, rows: Int) {
         self.cols = columns
