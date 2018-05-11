@@ -18,6 +18,12 @@ public struct BoardDimensions: Decodable {
         case cols = "Columns"
     }
     
+    public var boardSize: Int {
+        get {
+            return cols * rows
+        }
+    }
+    
     public init(columns: Int, rows: Int) {
         self.cols = columns
         self.rows = rows

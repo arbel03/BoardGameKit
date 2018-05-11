@@ -83,7 +83,7 @@ open class BaseBoardView<T, V: BasePieceView>: UIStackView where V.Piece == T, V
 			}
 		}
 	}
-	
+
 	public func addNewRow(newBoardRow boardRow: UIStackView) {
 		// If board is not squared, panic
         precondition(boardRow.arrangedSubviews.count == self.dimensions?.getColumnCount(), "All rows in a board must have the same amount of GameViewPieces.")

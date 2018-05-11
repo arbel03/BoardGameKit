@@ -27,26 +27,48 @@ open class BaseBoard<T: BasePiece> {
         }
     }
  
-    public subscript(_ row: Int, _ column: Int) -> T {
-        return getPiece(forPosition: Position(row: row, col: column))!
+    public func getBoardDimensions() -> BoardDimensions {
+        return self.dimensions
+    }
+    
+    public subscript(_ row: Int) -> T {
+        return getPiece(forIndex: row)!
     }
     
     public func getPiece(forIndex index: Int) -> T? {
-		return getPiece(forPosition: dimensions.toPosition(index: index))
+        return getPiece(forPosition: dimensions.toPosition(index: index))
     }
-	
+    
     public func getPiece(forPosition position: Position) -> T? {
-		if position.getColumn() >= 0 && position.getColumn() < dimensions.getColumnCount() && position.getRow() >= 0 && position.getRow() < dimensions.getRowCount() {
-			return board[position.getRow()][position.getColumn()]
-		}
-		return nil
-	}
+        if position.getColumn() >= 0 && position.getColumn() < dimensions.getColumnCount() && position.getRow() >= 0 && position.getRow() < dimensions.getRowCount() {
+            return board[position.getRow()][position.getColumn()]
+        }
+        return nil
+    }
 
     public func setPiece(atPosition position: Position, piece: T) {
         board[position.getRow()][position.getColumn()] = piece
     }
     
-    public func getBoardDimensions() -> BoardDimensions {
-        return self.dimensions
+    public func setPiece(atIndex index: Int, piece: T) {
+        setPiece(atPosition: dimensions.toPosition(index: index), piece: piece)
+    }
+    
+    public func shuffle() {
+        func swap(a: Int, b: Int) {
+            let aPiece = getPiece(forIndex: a)!
+            let bPiece = getPiece(forIndex: b)!
+            setPiece(atIndex: b, piece: aPiece)
+            setPiece(atIndex: a, piece: bPiece)
+        }
+        
+        for _ in 0 ... dimensions.boardSize*2 {
+            let a = Int(arc4random_uniform(UInt32(dimensions.boardSize)))
+            var b = a
+            while b == a {
+                b = Int(arc4random_uniform(UInt32(dimensions.boardSize)))
+            }
+            swap(a: a, b: b)
+        }
     }
 }
